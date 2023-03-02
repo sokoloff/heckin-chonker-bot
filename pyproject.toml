@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "heckin-chonker-bot"
+version = "0.1.0"
+description = ""
+authors = ["Alexander Sokolov <alsokoloff@gmail.com>"]
+readme = "README.md"
+packages = [{include = "heckin_chonker_bot"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+python-telegram-bot = "20.1"
+aiohttp = "3.8.4"
+python-dotenv = "1.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+
+[tool.isort]
+profile = "black"
+
+[tool.pytest.ini_options]
+testpaths = [
+    "tests",
+    "app",
+]
+addopts = "--doctest-modules --cov=app/api/api_v1/endpoints --cov-fail-under=100 --cov-report=html"
