@@ -47,7 +47,14 @@ async def request(text):
         ) as response:
             json = await response.json()
 
-        return json.get("choices", {})[0].get("message", {}).get("content", {})
+        try:
+            gtp_response = (
+                json.get("choices", {})[0].get("message", {}).get("content", {})
+            )
+        except Exception:
+            logger.debug(json)
+            raise Exception
+        return gtp_response
 
 
 async def chonk_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:

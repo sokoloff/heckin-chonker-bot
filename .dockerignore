@@ -1,0 +1,11 @@
+config
+logs
+README.md
+.python-version
+tox.ini
+.pre-commit-config.yaml
+docker-compose.yml
+Makefile
+tests
+.git/
+.idea/
