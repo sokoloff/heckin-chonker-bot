@@ -10,4 +10,4 @@ else
     echo "Not running pre-start script"
 fi
 
-exec PYTHONPATH=. python heckin_chonker_bot/bot.py
+exec python heckin_chonker_bot/bot.py
